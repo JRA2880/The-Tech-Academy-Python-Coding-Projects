@@ -35,30 +35,31 @@ class ParentWindow(Frame):
     def __init__(self,master):
         self.master = master
         self.master.resizable(width = True,height = True)
-        self.master.geometry('{}x{}'.format(600,600))
+        self.master.geometry('{}x{}'.format(300,300))
         self.master.title('Search Directory App')
         self.master.config(bg='lightgrey')
         
-        self.btnSubmit = Button(self.master,text="Search Directory",width=50,height=0,font=("Helvetica",16),fg='black',bg='grey',command=self.search)
-        self.btnSubmit.grid(row=2,column=1,padx=(20,0),pady=(15,0))
+        self.btnSubmit = Button(self.master,text="Search Directory",font=("Helvetica",16),fg='black',bg='grey',command=self.search)
+        self.btnSubmit.pack()
 
-        self.txtBox = Text(self.master,width=50,height=20)
-        self.txtBox.grid(row=3,column=1,columnspan=2,padx=(20,0),pady=(15,0))
+        self.txtBox = Text(self.master)
+        self.txtBox.pack()
 
     def search(self):
         currentDirectory = filedialog.askdirectory()
-        testFile = ''
-        filePath = os.path.join(currentDirectory,testFile)
-        print(filePath)
-
-    def display(self,search):
-        txtBox.insert(tk.END,search)
-
-
+        displayDirectory = currentDirectory
+        self.txtBox.insert(END,displayDirectory)
+                 
+        
 if __name__ == "__main__":
     root = Tk()
     App = ParentWindow(root)
     root.mainloop()
+
+
+
+
+
 
 
 
