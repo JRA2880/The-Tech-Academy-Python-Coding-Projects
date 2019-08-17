@@ -43,7 +43,7 @@ class ParentWindow(Frame):
         self.lblDisplay2 = Label(self.master,text='',font=("Helvetica",16),fg='black',bg='lightgrey')
         self.lblDisplay2.grid(row=9,column=3,padx=(0,0),pady=(0,0),sticky=W+E+N+S) 
         
-        self.btnSubmit = Button(self.master,text="Check for files.",width=15,height=2,command=self.check)
+        self.btnSubmit = Button(self.master,text="Check for files...",width=15,height=2,command=self.check)
         self.btnSubmit.grid(row=5,column=0,columnspan=2,padx=(20,0),pady=(15,0),sticky=S+W)
 
         self.btnSubmit = Button(self.master,text="Close Program",width=15,height=2,command=self.close)
